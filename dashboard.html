@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Symptoms Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="dashboard-bg">
+
+<h1>🩺 Select Your Symptoms</h1>
+
+<div class="symptoms">
+
+<button onclick="predictDisease('fever')">Fever</button>
+<button onclick="predictDisease('cough')">Cough</button>
+<button onclick="predictDisease('headache')">Headache</button>
+<button onclick="predictDisease('vomiting')">Vomiting</button>
+<button onclick="predictDisease('cold')">Cold</button>
+<button onclick="predictDisease('fatigue')">Fatigue</button>
+<button onclick="predictDisease('rash')">Skin Rash</button>
+<button onclick="predictDisease('dizziness')">Dizziness</button>
+<button onclick="predictDisease('chestpain')">Chest Pain</button>
+<button onclick="predictDisease('stomachpain')">Stomach Pain</button>
+
+<button onclick="predictDisease('sorethroat')">Sore Throat</button>
+<button onclick="predictDisease('sneezing')">Sneezing</button>
+<button onclick="predictDisease('bodypain')">Body Pain</button>
+<button onclick="predictDisease('nausea')">Nausea</button>
+<button onclick="predictDisease('diarrhea')">Diarrhea</button>
+<button onclick="predictDisease('breathing')">Breathing Problem</button>
+<button onclick="predictDisease('chills')">Chills</button>
+<button onclick="predictDisease('sweating')">Sweating</button>
+<button onclick="predictDisease('jointpain')">Joint Pain</button>
+<button onclick="predictDisease('lossofappetite')">Loss of Appetite</button>
+
+<button onclick="predictDisease('blurredvision')">Blurred Vision</button>
+<button onclick="predictDisease('backpain')">Back Pain</button>
+<button onclick="predictDisease('toothpain')">Tooth Pain</button>
+<button onclick="predictDisease('earpain')">Ear Pain</button>
+<button onclick="predictDisease('anxiety')">Anxiety</button>
+<button onclick="predictDisease('depression')">Depression</button>
+<button onclick="predictDisease('itching')">Skin Itching</button>
+<button onclick="predictDisease('weightloss')">Weight Loss</button>
+<button onclick="predictDisease('weightgain')">Weight Gain</button>
+<button onclick="predictDisease('sleepproblem')">Sleep Problem</button>
+
+</div>
+
+<h2 id="resultBox"></h2>
+
+<canvas id="chart"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
