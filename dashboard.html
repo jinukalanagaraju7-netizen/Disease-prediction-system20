@@ -2,61 +2,216 @@
 <html>
 
 <head>
+<title>Disease Prediction</title>
 
-<title>Symptoms Dashboard</title>
+<style>
 
-<link rel="stylesheet" href="style.css">
+body{
+font-family:Arial;
+text-align:center;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+padding:30px;
+}
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+button{
+
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+background:white;
+color:black;
+
+}
+
+#result{
+
+margin-top:30px;
+font-size:22px;
+font-weight:bold;
+
+}
+
+</style>
+
+<script>
+
+function predict(symptom){
+
+var disease="";
+
+switch(symptom){
+
+case "fever":
+disease="Possible Disease: Viral Fever";
+break;
+
+case "cough":
+disease="Possible Disease: Common Cold";
+break;
+
+case "headache":
+disease="Possible Disease: Migraine";
+break;
+
+case "stomach":
+disease="Possible Disease: Food Poisoning";
+break;
+
+case "cold":
+disease="Possible Disease: Flu";
+break;
+
+case "vomiting":
+disease="Possible Disease: Gastritis";
+break;
+
+case "fatigue":
+disease="Possible Disease: Anemia";
+break;
+
+case "sorethroat":
+disease="Possible Disease: Throat Infection";
+break;
+
+case "chestpain":
+disease="Possible Disease: Heart Problem";
+break;
+
+case "dizziness":
+disease="Possible Disease: Low Blood Pressure";
+break;
+
+case "diarrhea":
+disease="Possible Disease: Food Infection";
+break;
+
+case "constipation":
+disease="Possible Disease: Digestive Issue";
+break;
+
+case "backpain":
+disease="Possible Disease: Muscle Strain";
+break;
+
+case "jointpain":
+disease="Possible Disease: Arthritis";
+break;
+
+case "toothache":
+disease="Possible Disease: Dental Infection";
+break;
+
+case "earpain":
+disease="Possible Disease: Ear Infection";
+break;
+
+case "rash":
+disease="Possible Disease: Skin Allergy";
+break;
+
+case "itching":
+disease="Possible Disease: Skin Allergy";
+break;
+
+case "weightloss":
+disease="Possible Disease: Diabetes";
+break;
+
+case "blurvision":
+disease="Possible Disease: Eye Problem";
+break;
+
+case "shortbreath":
+disease="Possible Disease: Asthma";
+break;
+
+case "sweating":
+disease="Possible Disease: Fever Infection";
+break;
+
+case "nausea":
+disease="Possible Disease: Stomach Infection";
+break;
+
+case "legpain":
+disease="Possible Disease: Muscle Pain";
+break;
+
+case "neckpain":
+disease="Possible Disease: Cervical Pain";
+break;
+
+case "anxiety":
+disease="Possible Disease: Stress Disorder";
+break;
+
+case "depression":
+disease="Possible Disease: Mental Health Issue";
+break;
+
+case "sleep":
+disease="Possible Disease: Insomnia";
+break;
+
+case "hairfall":
+disease="Possible Disease: Nutrient Deficiency";
+break;
+
+case "dryskin":
+disease="Possible Disease: Skin Dryness";
+break;
+
+}
+
+document.getElementById("result").innerHTML=disease;
+
+}
+
+</script>
 
 </head>
 
-<body class="dashboard-bg">
+<body>
 
-<h1>🩺 Select Your Symptoms</h1>
+<h1>🩺 Select Your Symptom</h1>
 
-<div class="symptoms">
+<button onclick="predict('fever')">Fever</button>
+<button onclick="predict('cough')">Cough</button>
+<button onclick="predict('headache')">Headache</button>
+<button onclick="predict('stomach')">Stomach Pain</button>
+<button onclick="predict('cold')">Cold</button>
+<button onclick="predict('vomiting')">Vomiting</button>
+<button onclick="predict('fatigue')">Fatigue</button>
+<button onclick="predict('sorethroat')">Sore Throat</button>
+<button onclick="predict('chestpain')">Chest Pain</button>
+<button onclick="predict('dizziness')">Dizziness</button>
 
-<button onclick="predictDisease('fever')">Fever</button>
-<button onclick="predictDisease('cough')">Cough</button>
-<button onclick="predictDisease('headache')">Headache</button>
-<button onclick="predictDisease('vomiting')">Vomiting</button>
-<button onclick="predictDisease('cold')">Cold</button>
-<button onclick="predictDisease('fatigue')">Fatigue</button>
-<button onclick="predictDisease('rash')">Skin Rash</button>
-<button onclick="predictDisease('dizziness')">Dizziness</button>
-<button onclick="predictDisease('chestpain')">Chest Pain</button>
-<button onclick="predictDisease('stomachpain')">Stomach Pain</button>
+<button onclick="predict('diarrhea')">Diarrhea</button>
+<button onclick="predict('constipation')">Constipation</button>
+<button onclick="predict('backpain')">Back Pain</button>
+<button onclick="predict('jointpain')">Joint Pain</button>
+<button onclick="predict('toothache')">Tooth Ache</button>
+<button onclick="predict('earpain')">Ear Pain</button>
+<button onclick="predict('rash')">Skin Rash</button>
+<button onclick="predict('itching')">Itching</button>
+<button onclick="predict('weightloss')">Weight Loss</button>
+<button onclick="predict('blurvision')">Blur Vision</button>
 
-<button onclick="predictDisease('sorethroat')">Sore Throat</button>
-<button onclick="predictDisease('sneezing')">Sneezing</button>
-<button onclick="predictDisease('bodypain')">Body Pain</button>
-<button onclick="predictDisease('nausea')">Nausea</button>
-<button onclick="predictDisease('diarrhea')">Diarrhea</button>
-<button onclick="predictDisease('breathing')">Breathing Problem</button>
-<button onclick="predictDisease('chills')">Chills</button>
-<button onclick="predictDisease('sweating')">Sweating</button>
-<button onclick="predictDisease('jointpain')">Joint Pain</button>
-<button onclick="predictDisease('lossofappetite')">Loss of Appetite</button>
+<button onclick="predict('shortbreath')">Short Breath</button>
+<button onclick="predict('sweating')">Excess Sweating</button>
+<button onclick="predict('nausea')">Nausea</button>
+<button onclick="predict('legpain')">Leg Pain</button>
+<button onclick="predict('neckpain')">Neck Pain</button>
+<button onclick="predict('anxiety')">Anxiety</button>
+<button onclick="predict('depression')">Depression</button>
+<button onclick="predict('sleep')">Sleep Problem</button>
+<button onclick="predict('hairfall')">Hair Fall</button>
+<button onclick="predict('dryskin')">Dry Skin</button>
 
-<button onclick="predictDisease('blurredvision')">Blurred Vision</button>
-<button onclick="predictDisease('backpain')">Back Pain</button>
-<button onclick="predictDisease('toothpain')">Tooth Pain</button>
-<button onclick="predictDisease('earpain')">Ear Pain</button>
-<button onclick="predictDisease('anxiety')">Anxiety</button>
-<button onclick="predictDisease('depression')">Depression</button>
-<button onclick="predictDisease('itching')">Skin Itching</button>
-<button onclick="predictDisease('weightloss')">Weight Loss</button>
-<button onclick="predictDisease('weightgain')">Weight Gain</button>
-<button onclick="predictDisease('sleepproblem')">Sleep Problem</button>
-
-</div>
-
-<h2 id="resultBox"></h2>
-
-<canvas id="chart"></canvas>
-
-<script src="script.js"></script>
+<h2 id="result"></h2>
 
 </body>
 </html>
