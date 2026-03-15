@@ -6,9 +6,9 @@ let pass=document.getElementById("newpass").value;
 localStorage.setItem("username",user);
 localStorage.setItem("password",pass);
 
-alert("Account Created");
+alert("Account Created Successfully");
 
-window.location="login.html";
+window.location="index.html";
 
 }
 
@@ -24,54 +24,25 @@ if(user===savedUser && pass===savedPass){
 
 window.location="dashboard.html";
 
-}else{
+}
+else{
 
-alert("Invalid Login");
+alert("Invalid Username or Password");
 
 }
 
 }
 
-function predictDisease(symptom){
+function predict(symptom){
 
 let disease="General Disease";
 
 if(symptom=="fever") disease="Viral Fever";
-else if(symptom=="cough") disease="Common Cold";
-else if(symptom=="headache") disease="Migraine";
-else if(symptom=="vomiting") disease="Food Poisoning";
-else if(symptom=="cold") disease="Flu";
-else if(symptom=="fatigue") disease="Anemia";
+if(symptom=="cough") disease="Common Cold";
+if(symptom=="headache") disease="Migraine";
+if(symptom=="vomiting") disease="Food Poisoning";
 
-document.getElementById("resultBox").innerHTML=
+document.getElementById("result").innerHTML=
 "Possible Disease: "+disease;
-
-drawChart(disease);
-
-}
-
-function drawChart(disease){
-
-const ctx=document.getElementById("chart");
-
-new Chart(ctx,{
-
-type:"pie",
-
-data:{
-
-labels:[disease,"Other Diseases"],
-
-datasets:[{
-
-data:[75,25],
-
-backgroundColor:["red","blue"]
-
-}]
-
-}
-
-});
 
 }
