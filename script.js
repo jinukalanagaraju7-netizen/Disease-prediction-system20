@@ -1,46 +1,44 @@
-function registerUser(){
+function predictDisease(){
 
-let user=document.getElementById("newuser").value;
-let pass=document.getElementById("newpass").value;
+let checkboxes=document.querySelectorAll("input[type=checkbox]:checked");
 
-localStorage.setItem("username",user);
-localStorage.setItem("password",pass);
+let symptoms=[];
 
-alert("Account Created Successfully");
+checkboxes.forEach(cb=>{
+symptoms.push(cb.value);
+});
 
-window.location="index.html";
+let disease="Unknown Disease";
 
+/* Disease logic */
+
+if(symptoms.includes("fever") && symptoms.includes("cough")){
+disease="Flu";
 }
 
-function login(){
-
-let user=document.getElementById("username").value;
-let pass=document.getElementById("password").value;
-
-let savedUser=localStorage.getItem("username");
-let savedPass=localStorage.getItem("password");
-
-if(user===savedUser && pass===savedPass){
-
-window.location="dashboard.html";
-
-}
-else{
-
-alert("Invalid Username or Password");
-
+else if(symptoms.includes("fever") && symptoms.includes("rash")){
+disease="Dengue";
 }
 
+else if(symptoms.includes("headache") && symptoms.includes("nausea")){
+disease="Migraine";
 }
 
-function predict(symptom){
+else if(symptoms.includes("stomachpain") && symptoms.includes("vomiting")){
+disease="Food Poisoning";
+}
 
-let disease="General Disease";
+else if(symptoms.includes("chestpain") && symptoms.includes("breathing")){
+disease="Heart Problem";
+}
 
-if(symptom=="fever") disease="Viral Fever";
-if(symptom=="cough") disease="Common Cold";
-if(symptom=="headache") disease="Migraine";
-if(symptom=="vomiting") disease="Food Poisoning";
+else if(symptoms.includes("cold") && symptoms.includes("sneezing")){
+disease="Common Cold";
+}
+
+else if(symptoms.includes("fatigue") && symptoms.includes("jointpain")){
+disease="Arthritis";
+}
 
 document.getElementById("result").innerHTML=
 "Possible Disease: "+disease;
